@@ -32,14 +32,12 @@
         margin: 0 12px;
         text-align: right;
         position: relative;
-        transition: all 0.4s ease-in-out;
-        transform: perspective(1000px) translateZ(0);
+        @include hoverEffect();
 
         &:hover {
             color: $black;
             border: 1px solid $lightWhiteColor;
             background-color: $lightWhiteColor;
-            transform: perspective(1000px) translateZ(-10px);
         }
     }
 
