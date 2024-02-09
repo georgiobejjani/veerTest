@@ -1,4 +1,4 @@
-@import '../../sass/style.scss';
+@import "../../sass/style.scss";
 
 .formWrapper {
     margin-top: 48px;
@@ -18,7 +18,7 @@
         z-index: 2;
 
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             border-radius: 100%;
             top: 1px;
@@ -66,7 +66,7 @@
     }
 
     &_controlForm {
-        width: 350px;
+        width: 400px;
         margin: 20px auto 0;
     }
 
@@ -77,24 +77,36 @@
         border-radius: 10px;
         height: 40px;
         padding: 10px;
-        border: 2px solid $lightGreen;
+        border: none;
         text-transform: capitalize;
         font-weight: 600;
         cursor: pointer;
+        position: relative;
+        box-shadow: 0px 1px 2px 0px #375DFB14;
 
         &:hover {
-            background-color: transparent;
+            background-color: #52b692;
         }
+
+        &:disabled:hover {
+            cursor: not-allowed;
+            background-color: $lightGreen;
+        }
+    }
+    &__validationMsg {
+        position: absolute;
+        color: red;
+        font-size: 11px;
+        font-weight: 500;
     }
 }
 
 .inputContainer {
-    margin-top: 20px;
+    margin-top: 25px;
 
     &__subTitle {
         @include inputTitle();
     }
-
 }
 
 .fieldWrapper {
@@ -103,6 +115,7 @@
     box-sizing: border-box;
     border: 1px solid $secondaryColor;
     border-radius: 10px;
+    padding: 0 10px;
     @include hoverEffect();
 
     &_iconContainer {
@@ -118,11 +131,23 @@
 
     &_inputType {
         height: 40px;
-        padding: 0;
+        padding: 0 10px;
         border: none;
         outline: none;
         width: 100%;
         background-color: transparent;
+    }
+}
+
+.bottomText {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    font-size: 14px;
+    & > a {
+        color:$lightGreen;
+        font-weight: 500;
+        margin-left: 4px;
     }
 }
 
