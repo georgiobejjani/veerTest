@@ -1,0 +1,158 @@
+@import "../../sass/style.scss";
+
+.formWrapper {
+    margin-top: 48px;
+    z-index: 1000;
+
+    &_fadeContainer {
+        width: 80px;
+        height: 80px;
+        @include center_align();
+        border-radius: 100%;
+        padding: 10px;
+        background-image: linear-gradient(to bottom,
+                rgba(226, 228, 233, 1) 0%,
+                rgba(226, 228, 233, 0.8) 50%,
+                rgba(226, 228, 233, 0) 75%,
+                rgba(226, 228, 233, 0) 100%);
+        z-index: 2;
+
+        &::before {
+            content: "";
+            position: absolute;
+            border-radius: 100%;
+            top: 1px;
+            bottom: 1px;
+            right: 1px;
+            left: 1px;
+            background-image: linear-gradient(to bottom,
+                    rgb(244, 245, 245, 0.8) 0%,
+                    rgb(244, 245, 245, 0.4) 50%,
+                    rgb(244, 245, 245, 0) 75%,
+                    rgb(244, 245, 245, 0) 100%);
+        }
+    }
+
+    &_iconContainer {
+        border-radius: 100%;
+        background-color: $white;
+        border: 1px solid $secondaryColor;
+        width: 60px;
+        height: 60px;
+        @include center_middle_align();
+        position: absolute;
+    }
+
+    &__userIcon {
+        height: 30px;
+        @include center_middle_align();
+        position: absolute;
+    }
+
+    &__title {
+        text-transform: capitalize;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    &__subTitle {
+        display: block;
+        width: fit-content;
+        margin: auto;
+        color: $textColor;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    &_controlForm {
+        width: 400px;
+        margin: 20px auto 0;
+    }
+
+    &_loginBtn {
+        width: 100%;
+        margin-top: 20px;
+        background-color: $lightGreen;
+        border-radius: 10px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        text-transform: capitalize;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+        box-shadow: 0px 1px 2px 0px #375DFB14;
+
+        &:hover {
+            background-color: #52b692;
+        }
+
+        &:disabled:hover {
+            cursor: not-allowed;
+            background-color: $lightGreen;
+        }
+    }
+    &__validationMsg {
+        position: absolute;
+        color: red;
+        font-size: 11px;
+        font-weight: 500;
+    }
+}
+
+.inputContainer {
+    margin-top: 25px;
+
+    &__subTitle {
+        @include inputTitle();
+    }
+}
+
+.fieldWrapper {
+    @include flex($justify-content: flex-start, $align-items: normal);
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid $secondaryColor;
+    border-radius: 10px;
+    padding: 0 10px;
+    @include hoverEffect();
+
+    &_iconContainer {
+        width: 30px;
+        position: relative;
+        border: none;
+    }
+
+    &__icon {
+        @include center_middle_align();
+        position: absolute;
+    }
+
+    &_inputType {
+        height: 40px;
+        padding: 0 10px;
+        border: none;
+        outline: none;
+        width: 100%;
+        background-color: transparent;
+    }
+}
+
+.bottomText {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    font-size: 14px;
+    & > a {
+        color:$lightGreen;
+        font-weight: 500;
+        margin-left: 4px;
+    }
+}
+
+@media #{$mobile} {
+    .formWrapper_controlForm {
+        width: 300px;
+    }
+}

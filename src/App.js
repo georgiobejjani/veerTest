@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import React, { useEffect, useContext } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import Login from "./Containers/Login/Login";
+import { LoginContext } from "./loginContext";
+import Homepage from "./Containers/Homepage";
 
 function App() {
+  const { state } = useContext(LoginContext);
+  const { loggedIn } = state;
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    if (loggedIn || localStorage.getItem('loggedIn')) {
+      navigate("/");
+    } else {
+      navigate("/login");
+    }
+  }, [loggedIn]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Homepage />} />
+      </Routes>
     </div>
   );
 }

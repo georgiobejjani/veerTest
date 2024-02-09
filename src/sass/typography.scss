@@ -1,0 +1,23 @@
+@mixin inputTitle () {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $black;
+    text-transform: capitalize;
+
+    &::after {
+        content: '*';
+        color: $lightGreen;
+    }
+}
+
+@mixin hoverEffect () {
+    transition: all 0.4s ease-in-out;
+    transform: perspective(1000px) translateZ(0);
+
+    &:hover,&:active,&:focus {
+        transform: perspective(1000px) translateZ(-10px);
+        background-color: $secondaryColor;
+    }
+}

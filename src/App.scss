@@ -1,0 +1,12 @@
+@import '../src/sass/style';
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $mainFont;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}

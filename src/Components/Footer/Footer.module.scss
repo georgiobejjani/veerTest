@@ -1,0 +1,14 @@
+@import '../../sass/style.scss';
+
+.footer_container {
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+
+    &__tag {
+        font-size: 14px;
+        @media #{$mobile} {
+            font-size: 12px;
+        }
+    }
+}

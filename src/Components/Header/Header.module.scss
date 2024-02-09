@@ -1,0 +1,87 @@
+@import "../../sass/style.scss";
+
+.header {
+    height: 88px;
+    background-color: $white;
+    border-bottom: 1px solid $secondaryColor;
+    width: 100%;
+    position: relative;
+    line-height: 88px;
+}
+
+.navBar {
+    @include flex(row,nowrap,flex-end);
+
+    &__link {
+        font-weight: 400;
+        color: $textColor;
+        font-size: 14px;
+    }
+
+    &__btnAction {
+        width: 115px;
+        border-radius: 10px;
+        border: 1px solid $secondaryColor;
+        padding: 10px;
+        background-color: transparent;
+        cursor: pointer;
+        color: $textColor;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: capitalize;
+        margin: 0 12px;
+        text-align: right;
+        position: relative;
+        @include hoverEffect();
+
+        &:hover {
+            color: $black;
+            border: 1px solid $lightWhiteColor;
+            background-color: $lightWhiteColor;
+        }
+    }
+
+    &__icon {
+        @include middle_align();
+        position: absolute;
+        left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.closeContainer {
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    transform: perspective(1000px) translateZ(0px);
+    position: relative;
+
+    &:hover {
+        background-color: $lightWhiteColor;
+        transform: perspective(1000px) translateZ(40px);
+
+        &::after,
+        &::before {
+            background-color: $black;
+        }
+
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 1.5px;
+        background-color: $textColor;
+    }
+
+    &::before {
+        transform: rotate(135deg) translateY(4px) translateX(2.5px);
+    }
+
+    &::after {
+        transform: rotate(225deg) translateX(4px) translateY(-2.5px);
+    }
+}

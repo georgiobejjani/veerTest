@@ -1,0 +1,16 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
+$mainFont: "Inter", sans-serif;
+
+// Color Variables
+$black: #000000;
+$white: #ffffff;
+
+$textColor: #525866;
+$lightGreen: #8CCFB7;
+$secondaryColor: #e2e4e9;
+$lightWhiteColor: #f6f8fa;
+
+// Media Queries
+$mobile: "(max-width: 768px)";
+$tablet: "(min-width: 768px) and (max-width: 991px)";

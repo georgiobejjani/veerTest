@@ -1,0 +1,44 @@
+@import "../../sass/style.scss";
+
+.msgContainer {
+    width: fit-content;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    @include center_align();
+    margin: 20px 0;
+}
+
+.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+
+    .returnMessage {
+        color: #721c24;
+    }
+}
+
+.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+
+    .returnMessage {
+        color: #155724;
+    }
+}
+
+.returnMessage {
+    font-size: 14px;
+    text-transform: capitalize;
+
+    @media #{$mobile} {
+        font-size: 12px;
+    }
+}
+
+@media #{$mobile} {
+    .msgContainer {
+        width: 75%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,44 @@
+@import '../../sass/style.scss';
+
+.pattern {
+  &_container {
+    width: 80%;
+    margin: auto;
+    height: 60vh;
+    @include flex(row,nowrap,space-between);
+    top: 88px;
+    @include center_align();
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__line {
+    width: 2px;
+    height: 100%;
+    background-image: linear-gradient(to bottom,
+        rgb(226, 228, 233, 0.8) 0%,
+        rgb(226, 228, 233, 0.6) 12.5%,
+        rgb(226, 228, 233, 0.4) 25%,
+        rgb(226, 228, 233, 0.2) 50%,
+        rgb(226, 228, 233, 0) 100%);
+    z-index: 3;
+  }
+}
+
+
+@media #{$tablet},
+#{$mobile} {
+  .pattern__line:nth-child(odd) {
+    display: none;
+  }
+}
+
+@media #{$mobile} {
+  .pattern__line:nth-child(14) {
+    display: none;
+  }
+
+  .pattern__line:nth-child(12) {
+    display: none;
+  }
+}
