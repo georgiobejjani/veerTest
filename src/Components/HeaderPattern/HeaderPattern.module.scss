@@ -5,8 +5,7 @@
     width: 80%;
     margin: auto;
     height: 60vh;
-    display: flex;
-    justify-content: space-between;
+    @include flex(row,nowrap,space-between);
     top: 88px;
     @include center_align();
     position: absolute;
